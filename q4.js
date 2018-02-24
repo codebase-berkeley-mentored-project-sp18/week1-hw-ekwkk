@@ -40,5 +40,5 @@ function bind(f, obj) {
   obj["f"] = f;
     return function bindEmUp(...args) {
         return obj.f(...args);
-  }
+  };
 }

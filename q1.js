@@ -32,8 +32,7 @@ function makeFilter(f, g, h) {
   return function makeFilterThatFilters(something) {
   	if (f(something) && g(something)) {
   		return h(something);
-  	} else {
-  		return something;
   	}
-  }
+  	return something;
+  };
 }
