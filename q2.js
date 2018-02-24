@@ -15,7 +15,15 @@ Example:
 --> "youbuytoomuchfuckinshit"
 */
 function censorBadWords(inputStr, badWords) {
-  //================
-  // YOUR CODE HERE
-  //================
+  var arrayOfInputs = inputStr.split(' ');
+  var returnString = [];
+  arrayOfInputs.forEach(function (elem) {
+  	if (badWords.includes(elem)) {
+  		returnString.push("*CENSORED*");
+  	} else {
+  		returnString.push(elem);
+  	}
+  });
+
+  return returnString.join(" ");
 }

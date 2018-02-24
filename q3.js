@@ -22,7 +22,18 @@ Example:
 --> 3
 */
 function getObjectNestingDepth(inputObject) {
-  //================
-  // YOUR CODE HERE
-  //================
+	var arrayOfKeys = Object.keys(inputObject);
+	var counter = [];
+	if (arrayOfKeys.length === 0) {
+		return 1;
+	} else {
+		for (var i = 0; i < arrayOfKeys.length; i++) {
+			if (typeof inputObject[arrayOfKeys[i]] !== "object") {
+				counter.push(1);
+			} else {
+				counter.push(1 + getObjectNestingDepth(inputObject[arrayOfKeys[i]]));
+			}
+		}
+	}
+	return Math.max.apply(Math, counter);
 }

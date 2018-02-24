@@ -37,7 +37,8 @@ Example 2:
 
 
 function bind(f, obj) {
-  //================
-  // YOUR CODE HERE
-  //================
+  obj["f"] = f;
+    return function bindEmUp(...args) {
+        return obj.f(...args);
+  }
 }

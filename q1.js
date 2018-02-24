@@ -29,7 +29,11 @@ Example:
 */
 
 function makeFilter(f, g, h) {
-  //================
-  // YOUR CODE HERE
-  //================
+  return function makeFilterThatFilters(something) {
+  	if (f(something) && g(something)) {
+  		return h(something);
+  	} else {
+  		return something;
+  	}
+  }
 }
